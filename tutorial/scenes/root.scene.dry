@@ -1,11 +1,12 @@
-title: Root Scene
+title: Home
 new-page: true
 
-This is the root scene of "Dendry Tutorial". The root scene is normally used
-as a hub: the choices allow you to go to different sections of your
-story. In shorter works it may just function as the first scene in the
-game, sending the player off into the tree of choices. If the root
-scene doesn't have any choices that it can display, the game is over.
+Welcome to the Dendry Tutorial. The purpose of this game is to
+introduce the functionality of Dendry and the way that functionality
+is used. It does this in the form of an interactive book, acting as an
+example as well as an explanation.
 
-# Scenes with a top tag can be displayed here.
+Below are the sections of this tutorial. If you're reading this for
+the first time, it is worth going through them in turn.
+
 - #top
