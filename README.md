@@ -6,12 +6,17 @@ functionality of Dendry and a range of different approaches to using
 it in a game. They require Dendry to run. Dendry can be found at:
 [https://github.com/dendry/dendry](https://github.com/dendry/dendry).
 
-Typically each game can be built into one of its supporting formats
-using the approprite `dendry` command, e.g.
+Typically each game can be played on the command line with
+
+    $ dendry run tutorial
+
+or built into one of its supported playable formats using the
+approprite `make-` command, e.g.
 
     $ dendry make-html tutorial
 
-(assuming you have dendry on your path) and then run or viewed, e.g.
+(both commands assume you have dendry on your path). It can then be
+run or viewed, e.g.
 
     $ google-chrome tutorial/out/html/index.html
 
