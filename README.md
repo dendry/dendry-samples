@@ -3,7 +3,9 @@
 
 This repository is intended to contain sample games demonstrating the
 functionality of Dendry and a range of different approaches to using
-it in a game.
+it in a game. They require Dendry to run. Dendry can be found at:
+
+    [https://github.com/dendry/dendry](https://github.com/dendry/dendry)
 
 Typically each game can be built into one of its supporting formats
 using the approprite `dendry` command, e.g.
