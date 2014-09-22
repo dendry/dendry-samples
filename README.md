@@ -1,4 +1,4 @@
-![Dendry](https://raw.githubusercontent.com/dendry/dendry/master/design/logo_64.png) Dendry Samples
+![Dendry](http://dendry.org/img/logo_64.png) Dendry Samples
 ======
 
 This repository is intended to contain sample games demonstrating the
