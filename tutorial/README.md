@@ -1,4 +1,4 @@
-![Dendry](https://raw.githubusercontent.com/dendry/dendry/master/design/logo_64.png) Dendry Tutorial
+![Dendry](http://dendry.org/img/logo_64.png) Dendry Tutorial
 ======
 
 A game that describes the features of Dendry in an interactive book
