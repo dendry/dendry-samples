@@ -1,12 +1,18 @@
 title: Home
 new-page: true
 
+> The love of learning, the sequestered looks //
+> And all the sweet serenity of books.
+>> -- Hendry Wadsworth Longfellow
+
 Welcome to the Dendry Tutorial. The purpose of this game is to
-introduce the functionality of Dendry and the way that functionality
+introduce the functionality of **Dendry** and the way that functionality
 is used. It does this in the form of an interactive book, acting as an
 example as well as an explanation.
 
-Below are the sections of this tutorial. If you're reading this for
-the first time, it is worth going through them in turn.
+= Topics
+
+[Below are the sections of this tutorial. If you're reading this for
+the first time, it is worth going through them in turn.]
 
 - #top

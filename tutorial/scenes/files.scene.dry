@@ -1,0 +1,8 @@
+title: Defining Your Game
+subtitle: What files you need and how they're defined.
+new-page: true
+tags: top
+order: 100
+
+This section describes how you define a Dendry game using scene and
+quality files.
