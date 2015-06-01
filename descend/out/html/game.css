@@ -30,11 +30,25 @@ header h2:before {
   font-style: italic;
   padding: 0 0.3em 0 0;
 }
+
+#game {
+  width: 640px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/**************************************************************************
+ * Content 
+ **************************************************************************/
 #content {
   background-color: #f3f3f3;
   font-size: 1.1em;
-  padding: 1em;
+  padding: 20px;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  min-width: 580px;
 }
 #content h1:first-child {
   margin-top: 0.5em;
@@ -96,4 +110,47 @@ blockquote.attribution {
 }
 blockquote + blockquote.attribution {
   margin-top: -1em;
+}
+
+/**************************************************************************
+ * Map
+ **************************************************************************/
+#map {
+  padding: 10px 0 0 10px;
+  width: 630px;
+  height: 630px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  line-height: 0;
+  overflow: hidden;
+}
+#map .tile {
+  width: 200px;
+  height: 200px;
+  margin: 0 10px 10px 0;
+  background-color: #987;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1em;
+  position: relative;
+}
+#map .tile.reachable {
+  background-color: #cba;
+}
+#map .tile.occupied {
+  background-color: #edc !important;
+}
+#map .player {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  text-align: center;
+  width: 100px;
+  height: 75px;
+  color: #fc6;
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 25px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
 }
