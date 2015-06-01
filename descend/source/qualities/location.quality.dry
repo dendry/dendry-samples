@@ -1,0 +1,3 @@
+name: Location
+initial: 1
+signal: location
