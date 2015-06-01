@@ -9,3 +9,9 @@ format. Build it into HTML form with:
 and view with your browser, e.g.
 
     $ google-chrome tutorial/out/html/index.html
+
+Because this game doesn't use any additional logic, other than the basic
+Dendry game engine, it can also be built into a HTML file with the 'onepage'
+template:
+
+    $ dendry make-html tutorial -t onepage
