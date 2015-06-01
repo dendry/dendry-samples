@@ -1,0 +1,14 @@
+title: Stairs Down
+new-page: true
+tags: bg-stairs
+
+= Stairs Down
+
+- @down: Go down
+- @cancel: Continue on this level... 
+
+
+@down
+onArrival: level += 1
+
+You head downstairs.

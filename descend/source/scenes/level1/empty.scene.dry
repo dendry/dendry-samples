@@ -1,9 +1,8 @@
 title: An Emptyt Room
 new-page: true
-tags: level1
+tags: level1, level2, bg-normal
+go-to: cancel if known
 
 = An Empty Room
-
-[+level+] [+location+] [+known+]
 
 This is an empty room with no other content.

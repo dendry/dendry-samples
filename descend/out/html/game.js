@@ -3,12 +3,12 @@
 	var engine;
 	var ui;
 
-	var maxLevel = 1;
+	var maxLevel = 2;
 	var scenesValidPerLevel;
 	var onePerLevelSceneIds;
 
 	var reachableTiles = [
-		[2,4], [1,3,5], [2,6], [1,5,7], [2,4,6,8], [3,5,9], [4,8], [5,7,8], [6,8]
+		[2,4], [1,3,5], [2,6], [1,5,7], [2,4,6,8], [3,5,9], [4,8], [5,7,9], [6,8]
 		];
 
 	var thisLevelSceneIds;
@@ -34,27 +34,68 @@
 		if (onePerLevelSceneIds === undefined) onePerLevelSceneIds = {};
 	};
 
+	var getTagSuffix = function(tags, prefix) {
+		var prefixLength = prefix.length;
+		for (var i = 0; i < tags.length; ++i) {
+			var tag = tags[i];
+			if (tag.substr(0, prefixLength) === prefix) {
+				return tag.substr(prefixLength);
+			}
+		}
+		return null;
+	};
+
+	var setBackgroundImage = function($tile, imageName) {
+		if (imageName) {
+			$tile.css('background-image', "url('img/"+imageName+".png')");
+		} else {
+			$tile.css('background-image', 'none');
+		}
+	};
+
+	var setLocationStoryId = function(locationNumber, thisSceneId) {
+		// Store the story for this location.
+		thisLevelSceneIds[locationNumber-1] = thisSceneId;
+
+		// Change the corresponding tile appearance.
+		var $tile = $('#tile'+locationNumber);
+		if (thisSceneId !== null) {
+			var sceneTags = game.scenes[thisSceneId].tags;
+			var background = getTagSuffix(sceneTags, 'bg-');
+			setBackgroundImage($tile, background || 'none');
+		} else {
+			setBackgroundImage($tile, 'none');
+		}
+	};
+
 	var updateLevel = function() {
 		var levelNumber = engine.state.qualities.level;
 
-		console.log("Beginning level "+levelNumber);
+		thisLevelSceneIds = [null, null, null, null, null, null, null, null, null];
 
+		// Label the visited locations.
+		$(".tile").removeClass('visited');
+		$("#tile1").addClass('visited');
+
+		// The first room is empty
+		setLocationStoryId(1, null);
+
+		// Randomly choose most rooms.
 		var random = ui.dendryEngine.random;
 		var validScenes = scenesValidPerLevel[levelNumber-1];
-
-		thisLevelSceneIds = [null];
 		for (var i = 2; i < 9; ++i) {
 			var thisSceneIndex = random.uint32() % validScenes.length;
 			var thisSceneId = validScenes[thisSceneIndex];
+
 			if (onePerLevelSceneIds[thisSceneId]) {
 				validScenes.splice(thisSceneIndex, 1);
 			}
-			thisLevelSceneIds.push(thisSceneId);
 
-			// Change the corresponding tile appearance.
-			$('#tile'+i).html(thisSceneId);
+			setLocationStoryId(i, thisSceneId);			
 		}
-		thisLevelSceneIds.push(null);
+		// Set the exit or goal
+		var lastLocationId = (levelNumber === maxLevel) ? 'goal' : 'stairs';
+		setLocationStoryId(9, lastLocationId);
 
 		// Don't set the location on setup if it isn't set yet.
 		if (engine.state.qualities.location !== undefined) {
@@ -68,7 +109,6 @@
 
 	var updateLocation = function() {
 		var locationNumber = engine.state.qualities.location;
-		console.log("Moving to "+locationNumber);
 
 		// Set the reachability of the surrounding tiles.
 		$(".tile").removeClass('reachable').removeClass('occupied');
@@ -81,9 +121,6 @@
 		var $player = $('#player').detach();
 		$("#tile"+locationNumber).append($player).
 			addClass('occupied').addClass('reachable');
-
-		// Set the reachability now.
-		hasBeenToLocation[locationNumber-1] = true;
 	};
 
 	var hideStoryContent = function() {
@@ -118,7 +155,6 @@
 			}
 			break;
 		}
-		console.log(JSON.stringify(signal));
 	};
 
 	var handleClickOnTile = function() {
@@ -142,6 +178,12 @@
 				var destinationSceneId = thisLevelSceneIds[tileNumber-1];
 				if (destinationSceneId !== null) {
 					engine.goToScene(destinationSceneId);					
+				}
+
+				// Remember that we've been here.
+				if (hasBeenToLocation[tileNumber-1] === false) {
+					hasBeenToLocation[tileNumber-1] = true;
+					$("#tile"+tileNumber).addClass('visited');
 				}
 			}
 		}

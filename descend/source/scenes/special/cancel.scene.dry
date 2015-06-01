@@ -1,5 +1,6 @@
-title: Root Scene
+title: Hide the Story
 new-page: true
+game-over: false
 signal: cancel
 
 You should not see this. If you see this, you're probably playing this
