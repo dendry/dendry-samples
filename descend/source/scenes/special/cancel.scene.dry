@@ -3,5 +3,10 @@ new-page: true
 game-over: false
 signal: cancel
 
-You should not see this. If you see this, you're probably playing this
+You should not see this. This scene is displayed when we want the story
+to disappear from the screen. It is also the root scene, so when any other
+scene is finished, Dendry with return to this scene and remove the story
+window.
+
+If you see this appear in your game, you're probably playing this
 without its remaining code, so you won't be able to do anything.

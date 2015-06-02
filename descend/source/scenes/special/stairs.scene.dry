@@ -4,8 +4,8 @@ tags: bg-stairs
 
 = Stairs Down
 
-- @down: Go down
-- @cancel: Continue on this level... 
+- @cancel: Stay on this level.
+- @down: Descend the stairs into the unknown.
 
 
 @down

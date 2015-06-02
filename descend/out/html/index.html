@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Descend - Dendry</title>
+    <title>Descend - Dendry and Its Contributors</title>
     <link rel="stylesheet" type="text/css" href="game.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="core.js"></script>
@@ -10,27 +10,30 @@
   <body>
     <header>
       <h1>Descend</h1>
-      <h2>Dendry</h2>
+      <h2>Dendry and Its Contributors</h2>
     </header>
 
     <div id='game'>
-      <div id='map'>
-        <div id="tile1" class="tile"><div id="player" class="player">@</div></div><div
-             id="tile2" class="tile"></div><div
-             id="tile3" class="tile"></div><div
-             id="tile4" class="tile"></div><div
-             id="tile5" class="tile"></div><div
-             id="tile6" class="tile"></div><div
-             id="tile7" class="tile"></div><div
-             id="tile8" class="tile"></div><div
-             id="tile9" class="tile"></div>
+      <div id='mapContainer' style='opacity: 0.5'>
+        <div id='map'>
+          <div id="tile1" class="tile"><div id="player" class="player"></div></div><div
+               id="tile2" class="tile"></div><div
+               id="tile3" class="tile"></div><div
+               id="tile4" class="tile"></div><div
+               id="tile5" class="tile"></div><div
+               id="tile6" class="tile"></div><div
+               id="tile7" class="tile"></div><div
+               id="tile8" class="tile"></div><div
+               id="tile9" class="tile"></div>
+        </div>
+        <h1 id="level">Depth 1</h1>
       </div>
 
       <!-- The story container. -->
       <div id='content'></div>
     </div>
     <footer>
-      &copy; 2015 Dendry.
+      &copy; 2015 Dendry and Its Contributors.
       Made with <a href="http://dendry.org/">Dendry</a>.
     </footer>
   </body>
