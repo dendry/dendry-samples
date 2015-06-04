@@ -3,6 +3,6 @@ new-page: true
 tags: level1, level2, bg-normal
 go-to: cancel if known
 
-= An Empty Room
+= An Empty Room 1
 
 This is an empty room with no other content.
