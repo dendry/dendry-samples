@@ -1,0 +1,9 @@
+title: Root Scene
+new-page: true
+
+This is an example of a quiz built in Dendry. Each question gives four
+answers. And you get a different ending to the quiz depending on what
+pattern of answers you choose. The set of outcomes is simple enough that the
+whole game can be built into a gamebook.
+
+- @q01

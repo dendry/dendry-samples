@@ -1,0 +1,36 @@
+title: Your Answers
+# Because Dendry chooses randomly among valid go-to destinations, if
+# we have multiple options with the highest value, an outcome will be
+# chosen from them at random.
+go-to: mostly-a if a >= b and a >= c and a >= d;
+	   mostly-b if b >= a and b >= c and b >= d;
+	   mostly-c if c >= a and c >= b and c >= d;
+	   mostly-d if d >= a and d >= b and d >= c
+new-page: true
+# Zero the qualities after we've decided where we're going, so that
+# we don't have multiple copies of each of the final outcomes if we
+# make a gamebook version of this game.
+on-departure: a = 0; b = 0; c = 0; d = 0
+
+You've completed the quiz.
+
+@mostly-a
+game-over: true
+
+This is the result of the whole quiz if you picked mostly A.
+
+@mostly-b
+game-over: true
+
+This is the result of the whole quiz if you picked mostly B.
+
+@mostly-c
+game-over: true
+
+This is the result of the whole quiz if you picked mostly C.
+
+@mostly-d
+game-over: true
+
+This is the result of the whole quiz if you picked mostly D.
+

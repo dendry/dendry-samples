@@ -54,9 +54,6 @@ header h2:before {
   left: 10px;
   min-width: 580px;
 }
-#content h1:first-child {
-  margin-top: 0.5em;
-}
 #content h1 {
   margin: 1em 0 0.5em 0;
   font-size: 1.5em;
