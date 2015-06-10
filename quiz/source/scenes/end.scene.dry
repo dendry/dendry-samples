@@ -12,25 +12,45 @@ new-page: true
 # make a gamebook version of this game.
 on-departure: a = 0; b = 0; c = 0; d = 0
 
-You've completed the quiz.
+= Your Results
+
+You've completed the quiz. Based on your results, I can determine what kind
+of game player you appear to be.
 
 @mostly-a
 game-over: true
 
-This is the result of the whole quiz if you picked mostly A.
+= It's all about the Game
+
+You are a *Game*-focussed player. You enjoy tradeoffs: working out how to
+optimise your strategy with the resources the game provides. You'll sink
+countless hours into a game as long as there is enough complexity and
+difficulty.
 
 @mostly-b
 game-over: true
 
-This is the result of the whole quiz if you picked mostly B.
+= It's all about the Story
+
+You are a *Story*-focussed player. You enjoy interesting characters, unusual
+plots and intriguing worlds. You can suspend your disbelief, as long as the
+game is well written, and the worle well crafted.
 
 @mostly-c
 game-over: true
 
-This is the result of the whole quiz if you picked mostly C.
+= It's all about the Game Design
+
+You are a *Design*-focussed player. You enjoy games that do something new,
+with unusual mechanics or well designed systems. You enjoy simple games that
+take an idea and do they most they can with it.
 
 @mostly-d
 game-over: true
 
-This is the result of the whole quiz if you picked mostly D.
+= It's all about the Simulation
+
+You are a *Simulation*-focussed player. You like exploring new worlds, until
+they become familiar enough for you to escape into your alternate life. You
+enjoy being a tourist as much as playing the main campaign.
 

@@ -3,51 +3,34 @@ new-page: true
 
 = Question 2
 
-This is a question. In each of the ten questions there are four choices.
+The platform game you're playing feels a bit 'floaty'. When you jump the
+character seems to stay airborne a little too long for you to judge your
+jumps correctly.
 
-- @a : Answer A
-- @b : Answer B
-- @c : Answer C
-- @d : Answer D
+What are you thinking?
+
+- @a : The tricky jumps are part of the challenge of those precise levels.
+- @b : Perhaps the game will reveal the character has some flying ability.
+- @c : The developer should have stuck to the Mario jump timing: tried and true.
+- @d : The level has them jumping 20 feet in the air, so its not realistic.
 
 @a
 on-arrival: a += 1
-
----
-
-This is a comment on your answer A.
-
-- @next : Continue...
+go-to: next
 
 @b
 on-arrival: b += 1
-
----
-
-This is a comment on your answer B.
-
-- @next : Continue...
+go-to: next
 
 @c
 on-arrival: c += 1
-
----
-
-This is a comment on your answer C.
-
-- @next : Continue...
+go-to: next
 
 @d
 on-arrival: d += 1
-
----
-
-This is a comment on your answer D.
-
-- @next : Continue...
-
+go-to: next
 
 @next
-# We forward answers to here, rather than the next question to allow
-# us to change one value not four if we need to reorder questions.
+# We forward answers to here to allow us to change one value not four if we
+# need to reorder questions.
 go-to: @q03

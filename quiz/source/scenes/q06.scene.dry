@@ -3,51 +3,34 @@ new-page: true
 
 = Question 6
 
-This is a question. In each of the ten questions there are four choices.
+Gamers often describe their favourite titles creating a feeling of flow: a
+sense of timelessness where you're perfectly in tune with the game.
 
-- @a : Answer A
-- @b : Answer B
-- @c : Answer C
-- @d : Answer D
+What experience in a game sounds most like it would generate that feeling
+for you.
+
+- @a : Using all the resources the game provides to demonstrate my mastery.
+- @b : Delving into a fascinating world full of intriguing characters.
+- @c : Discovering clever new mechanics that change the nature of the game.
+- @d : A world convincing enough to make me feel I'm really there.
 
 @a
 on-arrival: a += 1
-
----
-
-This is a comment on your answer A.
-
-- @next : Continue...
+go-to: next
 
 @b
 on-arrival: b += 1
-
----
-
-This is a comment on your answer B.
-
-- @next : Continue...
+go-to: next
 
 @c
 on-arrival: c += 1
-
----
-
-This is a comment on your answer C.
-
-- @next : Continue...
+go-to: next
 
 @d
 on-arrival: d += 1
-
----
-
-This is a comment on your answer D.
-
-- @next : Continue...
-
+go-to: next
 
 @next
-# We forward answers to here, rather than the next question to allow
-# us to change one value not four if we need to reorder questions.
-go-to: @q07
+# We forward answers to here to allow us to change one value not four if we
+# need to reorder questions.
+go-to: @end

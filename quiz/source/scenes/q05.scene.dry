@@ -3,51 +3,33 @@ new-page: true
 
 = Question 5
 
-This is a question. In each of the ten questions there are four choices.
+What's the worst sin a game can commit?
 
-- @a : Answer A
-- @b : Answer B
-- @c : Answer C
-- @d : Answer D
+- @a : It lacks progression. The whole game uses the same mechanic: it gets 
+	   tedious and repetitious.
+- @b : It is uninteresting. The world and its inhabitants are one-dimensional.
+- @c : It is generic. The same game as countless other titles, with
+	   cosmetic changes.
+- @d : It is unbelievable. Pickups sit in mid-air, invisible walls divide
+	   the level.
 
 @a
 on-arrival: a += 1
-
----
-
-This is a comment on your answer A.
-
-- @next : Continue...
+go-to: next
 
 @b
 on-arrival: b += 1
-
----
-
-This is a comment on your answer B.
-
-- @next : Continue...
+go-to: next
 
 @c
 on-arrival: c += 1
-
----
-
-This is a comment on your answer C.
-
-- @next : Continue...
+go-to: next
 
 @d
 on-arrival: d += 1
-
----
-
-This is a comment on your answer D.
-
-- @next : Continue...
-
+go-to: next
 
 @next
-# We forward answers to here, rather than the next question to allow
-# us to change one value not four if we need to reorder questions.
+# We forward answers to here to allow us to change one value not four if we
+# need to reorder questions.
 go-to: @q06

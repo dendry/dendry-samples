@@ -1,9 +1,17 @@
 title: Root Scene
 new-page: true
 
-This is an example of a quiz built in Dendry. Each question gives four
+= What Kind of Gamer are You?
+
+People enjoy different things from the games they play. A MOBA might be your
+idea of heaven, but my idea of pergatory. This quiz tries to unlock what
+kind of player you are, and what you look for in a game.
+
+---
+
+*This is an example of a quiz built in Dendry. Each question gives four
 answers. And you get a different ending to the quiz depending on what
 pattern of answers you choose. The set of outcomes is simple enough that the
-whole game can be built into a gamebook.
+whole game can be built into a gamebook.*
 
-- @q01
+- @q01 : Begin the quiz...

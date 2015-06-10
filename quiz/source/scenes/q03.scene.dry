@@ -3,51 +3,32 @@ new-page: true
 
 = Question 3
 
-This is a question. In each of the ten questions there are four choices.
+There are a few space games in development at the moment, after a few years
+when the genre seemed to be less popular. What would make the ideal space
+game for you?
 
-- @a : Answer A
-- @b : Answer B
-- @c : Answer C
-- @d : Answer D
+- @a : A large scale RPG with lots of planets, ships, weapons and resources.
+- @b : A space opera featuring interesting characters in dangerous situations.
+- @c : An independent 2D space shooter with some interestng mechanics.
+- @d : A realistic model of the galaxy with relativistic gravity.
 
 @a
 on-arrival: a += 1
-
----
-
-This is a comment on your answer A.
-
-- @next : Continue...
+go-to: next
 
 @b
 on-arrival: b += 1
-
----
-
-This is a comment on your answer B.
-
-- @next : Continue...
+go-to: next
 
 @c
 on-arrival: c += 1
-
----
-
-This is a comment on your answer C.
-
-- @next : Continue...
+go-to: next
 
 @d
 on-arrival: d += 1
-
----
-
-This is a comment on your answer D.
-
-- @next : Continue...
-
+go-to: next
 
 @next
-# We forward answers to here, rather than the next question to allow
-# us to change one value not four if we need to reorder questions.
+# We forward answers to here to allow us to change one value not four if we
+# need to reorder questions.
 go-to: @q04
