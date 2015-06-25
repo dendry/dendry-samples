@@ -1,5 +1,5 @@
 new-page: true
-tags: level1, level2, bg-normal
+tags: level1, level2, bg-empty
 go-to: cancel if known
 
 = An Empty Room 2

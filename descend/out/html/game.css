@@ -52,7 +52,7 @@ header h2:before {
   position: absolute;
   top: 10px;
   left: 10px;
-  min-width: 580px;
+  width: 580px;
 }
 #content h1 {
   margin: 1em 0 0.5em 0;
@@ -123,26 +123,20 @@ blockquote + blockquote.attribution {
  * Map
  **************************************************************************/
 #map, #level {
-  width: 630px;
+  width: 639px;
   background-color: rgba(0, 0, 0, 0.05);
   margin: 0 auto;
 }
-#level {
-  text-align: center;
-  font-weight: normal;
-  padding: 0 0 10px 10px;
-  font-size: 1.5em;
-}
 #map {
-  padding: 10px 0 0 10px;
-  height: 630px;
+  padding: 0;
+  height: 639px;
   line-height: 0;
   overflow: hidden;
 }
 #map .tile {
-  width: 200px;
-  height: 200px;
-  margin: 0 10px 10px 0;
+  width: 213px;
+  height: 213px;
+  margin: 0;
   background-color: rgba(255,204,153,0.2);
   display: inline-block;
   overflow: hidden;
@@ -150,19 +144,14 @@ blockquote + blockquote.attribution {
   position: relative;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  opacity: 0.67;
-  border-radius: 5px;
+  opacity: 0.4;
 }
 #map .tile.reachable {
   opacity: 1.0;
-  width: 192px;
-  height: 192px;
-  border: 4px solid #eee; 
   cursor: pointer;
 }
 #map .tile.reachable:hover {
-  box-shadow: 0px 0px 10px white;
-  border-color: white;
+  box-shadow: inset 0px 0px 10px orange;
 }
 #map .tile.occupied {
 }
@@ -171,10 +160,42 @@ blockquote + blockquote.attribution {
 }
 #map .player {
   position: absolute;
-  left: 56px;
-  top: 56px;
+  left: 67px;
+  top: 67px;
   text-align: center;
   width: 80px;
   height: 80px;
   background: url('img/player.png') 50% 50% no-repeat;
+}
+
+#map .tile:after {
+  position: absolute;
+  content: " ";
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent url('img/passage-none.png') no-repeat left top;
+}
+#map .tile.rb:after { background-image: url('img/passage-rb.png') }
+#map .tile.rbl:after { background-image: url('img/passage-rbl.png') }
+#map .tile.bl:after { background-image: url('img/passage-bl.png') }
+#map .tile.trb:after { background-image: url('img/passage-trb.png') }
+#map .tile.trbl:after { background-image: url('img/passage-trbl.png') }
+#map .tile.tbl:after { background-image: url('img/passage-tbl.png') }
+#map .tile.tr:after { background-image: url('img/passage-tr.png') }
+#map .tile.trl:after { background-image: url('img/passage-trl.png') }
+#map .tile.tl:after { background-image: url('img/passage-tl.png') }
+
+#stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;  
+  margin: 0;
+  padding: 0 1em;
+}
+#stats li {
+  font-size: 1.25em;
+  list-style-type: none;
 }

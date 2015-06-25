@@ -16,17 +16,22 @@
     <div id='game'>
       <div id='mapContainer' style='opacity: 0.5'>
         <div id='map'>
-          <div id="tile1" class="tile"><div id="player" class="player"></div></div><div
-               id="tile2" class="tile"></div><div
-               id="tile3" class="tile"></div><div
-               id="tile4" class="tile"></div><div
-               id="tile5" class="tile"></div><div
-               id="tile6" class="tile"></div><div
-               id="tile7" class="tile"></div><div
-               id="tile8" class="tile"></div><div
-               id="tile9" class="tile"></div>
+          <div id="tile1" class="tile rb"><div id="player" class="player"></div></div><div
+               id="tile2" class="tile rbl"></div><div
+               id="tile3" class="tile bl"></div><div
+               id="tile4" class="tile trb"></div><div
+               id="tile5" class="tile trbl"></div><div
+               id="tile6" class="tile tbl"></div><div
+               id="tile7" class="tile tr"></div><div
+               id="tile8" class="tile trl"></div><div
+               id="tile9" class="tile tl"></div>
         </div>
-        <h1 id="level">Depth 1</h1>
+        <ul id='stats'>
+          <li>Depth: <span id="level">1</span></li>
+          <li>Hits: <span id="hits">0</span>/<span id="max-hits">0</span></li>
+          <li>Level: <span id="pc-level">0</span></li>
+          <li>XP: <span id="xp">0/1</span></li>
+        </ul>
       </div>
 
       <!-- The story container. -->

@@ -1,0 +1,80 @@
+new-page: true
+tags: level1, level2, bg-empty
+go-to: previously-opened if room-chest-opened
+
+# A Chest with a level 5 trap
+
+# Room qualities:
+#  room-chest-opened - was the chest opened
+#  room-chest-disarmed - has the chest been disarmed or triggered
+
+= A Chest
+
+This is an empty room with no other content.
+
+- @examine
+- @hit
+- @open
+- @cancel: Ignore the chest and continue.
+
+
+@examine
+title: Examine the chest.
+go-to: found-trap if traps > 5; found-nothing if traps <= 5
+
+
+@found-trap
+on-arrival: room-chest-disarmed = 1
+
+You find the trap and disarm it.
+
+- @opened
+- @hit
+- @cancel: Ignore the chest and continue.
+
+
+@found-nothing
+
+You can't see anything wrong here.
+
+- @open
+- @hit
+- @cancel: Ignore the chest and continue.
+
+
+@hit
+title: Hit the chest.
+
+Bang, nothing happens.
+
+- @open
+- @examine
+- @cancel: Ignore the chest and continue.
+
+
+@open
+title: Open the chest.
+go-to: sprung-trap if not room-chest-disarmed; opened if room-chest-disarmed
+
+
+@sprung-trap
+on-arrival: hits -= 1; room-chest-disarmed = 1
+go-to: dead if hits <= 0
+
+Poof, trap, hurt. Now you can open it.
+
+- @opened
+- @hit
+- @cancel: Ignore the chest and continue.
+
+
+@opened
+title: Open the chest
+on-arrival: room-chest-opened = 1
+
+This is what's inside!
+
+
+@previously-opened
+
+The chest is here, but open.
