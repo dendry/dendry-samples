@@ -61,16 +61,18 @@
   };
 
   /* Scene tags are used to hold information for what images are used for
-   * a room's tile. This method helps extract a tag with a known prefix. */
-  var getTagSuffix = function(tags, prefix) {
+   * a room's tile. This method helps extract a set of tags with a known
+   * prefix. */
+  var getTagSuffixesForPrefix = function(tags, prefix) {
+    var result = [];
     var prefixLength = prefix.length;
     for (var i = 0; i < tags.length; ++i) {
       var tag = tags[i];
       if (tag.substr(0, prefixLength) === prefix) {
-        return tag.substr(prefixLength);
+        result.push(tag.substr(prefixLength));
       }
     }
-    return null;
+    return result;
   };
 
   /* Sets the tile background image to the given image name. Images are png
@@ -92,11 +94,19 @@
 
     // Change the corresponding tile appearance.
     var $tile = $('#tile'+locationNumber);
+    var hasSetBackground = false;
     if (thisSceneId !== null) {
       var sceneTags = game.scenes[thisSceneId].tags;
-      var background = getTagSuffix(sceneTags, 'bg-');
-      setBackgroundImage($tile, background || 'stairs-up');
-    } else {
+      var backgroundChoices = getTagSuffixesForPrefix(sceneTags, 'bg-');
+      console.log(backgroundChoices);
+      if (backgroundChoices.length > 0) {
+        var random = ui.dendryEngine.random;
+        var backgroundIndex = random.uint32() % backgroundChoices.length;
+        setBackgroundImage($tile, backgroundChoices[backgroundIndex]);
+        hasSetBackground = true;
+      }
+    }
+    if (!hasSetBackground) {
       setBackgroundImage($tile, 'stairs-up');
     }
   };
