@@ -1,6 +1,6 @@
 body {
   font-family: "Minion Pro", Georgia, serif;
-  background-color: #f3f3e3;
+  background-color: #e6d9cc;
   padding: 2em;
   line-height: 175%;
 }
@@ -144,7 +144,7 @@ blockquote + blockquote.attribution {
   position: relative;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  opacity: 0.4;
+  opacity: 0.25;
 }
 #map .tile.reachable {
   opacity: 1.0;

@@ -1,5 +1,5 @@
 new-page: true
-tags: level1, level2, bg-empty
+tags: level1, level2, bg-empty1, bg-empty2
 go-to: previously-opened if room-chest-opened
 
 # A Chest with a level 5 trap
