@@ -166,6 +166,7 @@ blockquote + blockquote.attribution {
   width: 80px;
   height: 80px;
   background: url('img/player.png') 50% 50% no-repeat;
+  transition: all 0.67s ease-in-out;
 }
 
 #map .tile:after {

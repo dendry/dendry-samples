@@ -191,9 +191,11 @@
     }
 
     // Move the player.
-    var $player = $('#player').detach();
-    $("#tile"+locationNumber).append($player).
-      addClass('occupied').addClass('reachable');
+    var $tile = $("#tile"+locationNumber);
+    $tile.addClass('occupied').addClass('reachable');
+    var tilePos = $tile.position()
+    var $player = $('#player');
+    $player.css({left:tilePos.left+67, top:tilePos.top+67});
   };
 
   /* When we're done with a story chunk, this method hides the story UI. */
